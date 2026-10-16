@@ -1,4 +1,25 @@
-
+# =============================================================
+#  RV32I Multi-Cycle CPU  ―  Simulation Makefile (VCS + Verdi)
+# =============================================================
+#  프로젝트 : RISC-V RV32I 멀티사이클 CPU 코어 + APB 버스 SoC, Basys-3(Artix-7) FPGA 구현
+#  구성      : rtl/ (CPU 코어·APB·주변장치·ROM), tb/ (기본 TB + UVM 8만 벡터 검증환경)
+#  상세 설명 : README.md 참고 (아키텍처/검증/FPGA 결과/트러블슈팅)
+#
+#  [ 타겟 사용법 ]
+#    make            : generate_f → VCS 컴파일(run) → 시뮬 실행(simv)
+#    make generate_f : rtl/tb 소스를 모아 files.f 자동 생성
+#    make run        : files.f 로 VCS 컴파일 → build/simv 생성
+#    make simv       : 시뮬레이션 실행 (커버리지 line+cond+fsm+tgl+branch+assert, UVM_HIGH)
+#    make verdi      : Verdi 로 wave.fsdb 파형 열기
+#    make clean      : 빌드/로그/파형 산출물 정리
+#
+#  [ 요구 환경 ]  Synopsys VCS (UVM 1.2), Verdi  /  FPGA 구현은 Vivado + Basys-3-Master.xdc
+#
+#  [ 팀 / 역할 ]  3인 팀 프로젝트 (멤버별 fork 운용)
+#    - 박정민(본인) : CPU 코어 설계, 누적합 프로그램 기계어 검증, FPGA 온보드 & Negative Slack 해결
+#    - 팀원 B       : TODO (APB/주변장치 등)
+#    - 팀원 C       : TODO (UVM 검증환경 등)
+# =============================================================
 
 # vcs Make file
 RTL_DIR   = ./rtl
